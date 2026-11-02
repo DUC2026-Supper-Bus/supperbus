@@ -6,17 +6,86 @@ workflows:
 
     environment:
       flutter: stable
+      xcode: latest
+      cocoapods: default
+      
+      groups:
+        - ios_credentials
+      
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.example.v_shere
 
     scripts:
+      - name: Set up code signing settings on Xcode project
+        script: |
+          xcode-project use-profiles
+
       - name: Get Flutter packages
-        script: flutter pub get
+        script: |
+          flutter packages pub get
 
-      - name: Analyze Flutter project
-        script: flutter analyze
+      - name: Install pods
+        script: |
+          find . -name "Podfile" -execdir pod install \;
 
-      - name: Build unsigned iOS app
-        script: flutter build ios --release --no-codesign
+      - name: Flutter build IPA
+        script: |
+          flutter build ipa --release
 
     artifacts:
-      - build/ios/iphoneos/*.app
-      - /tmp/xcodebuild_logs/*.log
+      - build/ios/ipa/*.ipa
+
+    publishing:
+      email:
+        recipients:
+          - your-email@example.com
+        notify:
+          success: true
+          failure: true
+
+  v-shere-ios-adhoc:
+    name: V-Shere iOS Ad-Hoc (for iPhone)
+    max_build_duration: 120
+    instance_type: mac_mini_m2
+
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      
+      groups:
+        - ios_credentials
+
+      ios_signing:
+        distribution_type: ad_hoc
+        bundle_identifier: com.example.v_shere
+
+    scripts:
+      - name: Set up code signing settings on Xcode project
+        script: |
+          xcode-project use-profiles
+
+      - name: Get Flutter packages
+        script: |
+          flutter packages pub get
+
+      - name: Install pods
+        script: |
+          find . -name "Podfile" -execdir pod install \;
+
+      - name: Flutter build IPA
+        script: |
+          flutter build ipa --release \
+            --export-options-plist=$HOME/export_options.plist
+
+    artifacts:
+      - build/ios/ipa/*.ipa
+      
+    publishing:
+      email:
+        recipients:
+          - your-email@example.com
+        notify:
+          success: true
+          failure: true
