@@ -14,7 +14,7 @@ workflows:
       
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.example.v_shere
+        bundle_identifier: com.vsal007.vshere
 
     scripts:
       - name: Set up code signing settings on Xcode project
@@ -59,7 +59,7 @@ workflows:
 
       ios_signing:
         distribution_type: ad_hoc
-        bundle_identifier: com.example.v_shere
+        bundle_identifier: com.vsal007.vshere
 
     scripts:
       - name: Set up code signing settings on Xcode project
