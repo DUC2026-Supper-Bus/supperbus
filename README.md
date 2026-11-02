@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # V-Shere - Fast Wi-Fi File Sharing
 
 A cross-platform file sharing application built with Flutter. Share files directly between devices on the same local Wi-Fi network without internet connection.
@@ -297,3 +298,7 @@ For issues, questions, or suggestions:
 ---
 
 **V-Shere v1.0** - Share files. Fast. Private. Direct. ⚡
+=======
+# V_SHERE
+App for share
+>>>>>>> adad603e003000d05caa938ebe2ce0c45aeba93a
