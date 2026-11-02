@@ -1,0 +1,22 @@
+workflows:
+  v-shere-ios:
+    name: V-Shere iOS Build
+    max_build_duration: 120
+    instance_type: mac_mini_m2
+
+    environment:
+      flutter: stable
+
+    scripts:
+      - name: Get Flutter packages
+        script: flutter pub get
+
+      - name: Analyze Flutter project
+        script: flutter analyze
+
+      - name: Build unsigned iOS app
+        script: flutter build ios --release --no-codesign
+
+    artifacts:
+      - build/ios/iphoneos/*.app
+      - /tmp/xcodebuild_logs/*.log
