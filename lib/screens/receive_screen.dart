@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:file_picker/file_picker.dart';
 
 import '../services/transfer_service.dart';
+import '../services/discovery_service.dart';
 
 class ReceiveScreen extends StatefulWidget {
   const ReceiveScreen({super.key});
@@ -15,6 +16,7 @@ class ReceiveScreen extends StatefulWidget {
 
 class _ReceiveScreenState extends State<ReceiveScreen> {
   final service = TransferService();
+  final discoveryService = DiscoveryService();
 
   String ipAddress = '';
   String status = 'Receiver is not running';
@@ -107,6 +109,13 @@ class _ReceiveScreenState extends State<ReceiveScreen> {
         },
       );
 
+      // Start announcing this device
+      final deviceName = 'V-Shere-${ip.split('.').last}';
+      await discoveryService.startAnnouncing(
+        deviceName: deviceName,
+        port: service.receiverPort,
+      );
+
       if (!mounted) return;
 
       setState(() {
@@ -125,6 +134,7 @@ class _ReceiveScreenState extends State<ReceiveScreen> {
   }
 
   Future<void> stopReceiving() async {
+    await discoveryService.stopAnnouncing();
     await service.stopReceiver();
 
     if (!mounted) return;
@@ -150,6 +160,7 @@ class _ReceiveScreenState extends State<ReceiveScreen> {
 
   @override
   void dispose() {
+    discoveryService.dispose();
     service.stopReceiver();
     super.dispose();
   }

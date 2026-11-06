@@ -66,5 +66,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>V-Shere needs access to your local network to discover and transfer files to nearby devices</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_vshere._tcp</string>
+	</array>
 </dict>
 </plist>
