@@ -1,3 +1,5 @@
+
+//
 // Microsoft Visual C++ generated resource script.
 //
 #pragma code_page(65001)
@@ -44,16 +46,13 @@ END
 
 #endif    // APSTUDIO_INVOKED
 
-
 /////////////////////////////////////////////////////////////////////////////
 //
 // Icon
 //
 
-// Icon with lowest ID value placed first to ensure application icon
-// remains consistent on all systems.
-IDI_APP_ICON            ICON                    "resources\\app_icon.ico"
-
+// Custom V_SHERE application icon.
+IDI_APP_ICON ICON "resources\\v_shere.ico"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -90,12 +89,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "v_shere" "\0"
+            VALUE "FileDescription", "V_SHERE" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "v_shere" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2026 com.example. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2026 V_SHERE. All rights reserved." "\0"
             VALUE "OriginalFilename", "v_shere.exe" "\0"
-            VALUE "ProductName", "v_shere" "\0"
+            VALUE "ProductName", "V_SHERE" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
@@ -106,16 +105,11 @@ BEGIN
 END
 
 #endif    // English (United States) resources
-/////////////////////////////////////////////////////////////////////////////
-
-
 
 #ifndef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
 //
 // Generated from the TEXTINCLUDE 3 resource.
 //
-
-
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED
