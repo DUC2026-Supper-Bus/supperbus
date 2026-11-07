@@ -7,7 +7,8 @@ A cross-platform file sharing application built with Flutter. Share files direct
 - ✅ **Multiple File Selection**: Select and send multiple files at once
 - ✅ **Direct Wi-Fi Transfer**: Transfer files directly over local network
 - ✅ **Cross-Platform**: Works on Android, iPhone, and Windows
-- ✅ **Manual IP Connection**: Simple IP-based connection (no discovery needed)
+- ✅ **Automatic Device Discovery**: Find receiving devices on the same local Wi-Fi network
+- ✅ **Manual IP Connection**: Connect directly by entering a receiver's IP address
 - ✅ **Receiver IP Display**: Shows your device's IP address for easy sharing
 - ✅ **Transfer Status**: Real-time transfer progress and status
 - ✅ **Custom Save Location**: Choose where received files are saved (Windows/iOS)
@@ -40,7 +41,7 @@ V-Shere uses **separate ports** for different platforms to avoid conflicts:
 
 ### Sending Files
 
-1. **Enter IP & Port**: Enter the receiver's IP address and port number
+1. **Choose a Receiver**: Select a discovered device, or enter its IP address manually
 2. **Select Files**: Tap "Choose Files" to select one or multiple files
 3. **Send**: Tap "Send Now" to transfer all files
 4. **Monitor Progress**: Watch real-time status updates for each file
@@ -57,8 +58,8 @@ V-Shere uses **separate ports** for different platforms to avoid conflicts:
 
 1. **Clone the repository**:
 ```bash
-git clone https://github.com/vsal007/V_SHERE
-cd v_shere
+git clone https://github.com/DUC2026-V-shere/V_SHERE.git
+cd V_SHERE
 ```
 
 2. **Install dependencies**:
