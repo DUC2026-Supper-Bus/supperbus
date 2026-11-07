@@ -84,6 +84,7 @@ saf: ^2.1.2
 
 ## 📖 Documentation
 
+- [DEVICE_DISCOVERY_GUIDE.md](DEVICE_DISCOVERY_GUIDE.md) - Automatic device discovery and troubleshooting
 - [CONNECTION_GUIDE.md](CONNECTION_GUIDE.md) - Detailed connection scenarios
 - [SAVE_FOLDER_GUIDE.md](SAVE_FOLDER_GUIDE.md) - Custom save location guide
 - [ANDROID_STORAGE_FIX.md](ANDROID_STORAGE_FIX.md) - Android storage permissions info
